@@ -7,5 +7,11 @@ task :console do
   ActiveRecord::Base.logger = Logger.new(STDOUT)
   
   # Open a Pry session
+  
   Pry.start
+end
+
+desc "Start the server"
+task :server do
+  exec "rerun -b 'rackup config.ru'"
 end
